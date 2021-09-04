@@ -11,7 +11,21 @@ database.mongoDB();
 app.use(bodyParser.json());
 app.use(logger.logger);
 app.use("/login", login);
+// app.use("/xzxcvzxcv",verifyToken(), login);
 
+// function verifyToken(req, res, next) {
+//     const bearerHeader = req.headers['authorization'];
+  
+//     if (bearerHeader) {
+//       const bearer = bearerHeader.split(' ');
+//       const bearerToken = bearer[1];
+//       req.token = bearerToken;
+//       next();
+//     } else {
+//       // Forbidden
+//       res.sendStatus(403);
+//     }
+//   }
 app.listen(port, function () {
     console.log("Starting node.js on port " + port);
 });

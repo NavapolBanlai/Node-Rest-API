@@ -18,9 +18,12 @@ const methods = {
         return user;
     },
     async findUserByUserName(userName) {
-        console.log(userName)
         const user = await UserModel.find({"userName" : userName});
-        return user;
+        if(user.length != 0){
+            return user;
+        }else{
+            return null;
+        }
     }
 };
 module.exports = { ...methods };
